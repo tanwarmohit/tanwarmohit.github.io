@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Basic Counting - Blog</title>
+  <meta property="og:title" content="Basic Counting - Blog" />
+  <meta name="twitter:title" content="Basic Counting - Blog" />
+  <meta name="description" content="Basic Counting methods using Permutation and Combination techniques. These are my classroom notes, which might be helpful to others. It starts from basic fundamental principle of counting and then move to elementary Permutation, Combination and their applications. Each section includes some basic problems for practice and illustrative examples for more complex topics. Some problems contains many sub-problems which helps in getting better insights for the concept / theory explained.">
+  <meta property="og:description" content="Basic Counting methods using Permutation and Combination techniques. These are my classroom notes, which might be helpful to others. It starts from basic fundamental principle of counting and then move to elementary Permutation, Combination and their applications. Each section includes some basic problems for practice and illustrative examples for more complex topics. Some problems contains many sub-problems which helps in getting better insights for the concept / theory explained.">
+  <meta name="twitter:description" content="Basic Counting methods using Permutation and Combination techniques. These are my classroom notes, which might be helpful to others. It starts from basic fundamental principle of counting and then …">
+  <meta name="author" content="MT"/>
+  <meta property="og:site_name" content="Blog" />
+  <meta property="og:url" content="/post/basic-counting/" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="generator" content="Hugo 0.40.3" />
+  <link rel="stylesheet" href="/css/style.css" media="all" />
+  <link rel="stylesheet" href="/css/syntax.css" media="all" />
+  <link rel="stylesheet" href="/css/custom.css" media="all" />
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+  <script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script type="text/javascript">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/javascript">
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="site-navi">
+    <h1 class="site-title"><a href="/">Blog</a></h1>
+    <ul class="site-navi-items">
+      <li class="site-navi-item-categories"><a href="/categories/" title="Categories">Categories</a></li>
+      <li class="site-navi-item-tags"><a href="/tags/" title="Tags">Tags</a></li>
+      <li class="site-navi-item-archives"><a href="/archives/" title="Archives">Archives</a></li>
+      <li class="site-navi-item-about"><a href="/about/" title="About">About</a></li>
+    </ul>
+  </nav>
+</header>
+<hr class="site-header-bottom">
+
+  <div class="main" role="main">
+    <article class="article">
+      
+      
+      <h1 class="article-title">Basic Counting</h1>
+      
+      <hr class="article-title-bottom">
+      <ul class="article-meta">
+        <li class="article-meta-date"><time>June 22, 2018</time></li>
+      </ul>
+      
+<aside class="toc">
+  <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#fundamental-of-counting">Fundamental of Counting</a>
+<ul>
+<li><a href="#addition-rule">Addition Rule</a></li>
+<li><a href="#multiplication-rule">Multiplication Rule</a></li>
+<li><a href="#bijection-rule">Bijection Rule</a></li>
+<li><a href="#practice-problems">Practice Problems</a>
+<ul>
+<li><a href="#warmup-problems">Warmup Problems</a></li>
+<li><a href="#mega-problem">Mega Problem</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#elementary-permutation-and-combination">Elementary Permutation and Combination</a>
+<ul>
+<li><a href="#permutation">Permutation</a></li>
+<li><a href="#combination">Combination</a>
+<ul>
+<li><a href="#pratice-problems">Pratice Problems</a></li>
+</ul></li>
+<li><a href="#permutation-combination-mix-problem-types">Permutation &amp; Combination Mix Problem Types</a>
+<ul>
+<li><a href="#sample-problems">Sample Problems</a></li>
+<li><a href="#sample-problem">Sample Problem</a></li>
+<li><a href="#sample-problem-1">Sample Problem</a></li>
+</ul></li>
+<li><a href="#tie-gap-method">Tie &amp; Gap Method</a></li>
+<li><a href="#all-possible-selections">All Possible Selections</a>
+<ul>
+<li><a href="#illustration-problem">Illustration Problem</a></li>
+</ul></li>
+<li><a href="#grouping-division-distribution">Grouping (Division &amp; Distribution)</a>
+<ul>
+<li><a href="#division">Division</a></li>
+<li><a href="#distribution">Distribution</a></li>
+<li><a href="#illustration-problems">Illustration Problems</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+</aside>
+      
+
+<p>Basic Counting methods using Permutation and Combination techniques. These are my classroom notes, which might be helpful to others.
+It starts from basic fundamental principle of counting and then move to elementary Permutation, Combination and their applications.
+Each section includes some basic problems for practice and illustrative examples for more complex topics. Some problems contains many sub-problems which helps in getting better insights for the concept / theory explained.</p>
+
+<h2 id="fundamental-of-counting">Fundamental of Counting</h2>
+
+<h3 id="addition-rule">Addition Rule</h3>
+
+<p>Let an event be occured through $Process_1$ in $m$ ways and through $Process_2$ in $n$ ways, then total number of ways in occuring an event is $m+n$.</p>
+
+<blockquote>
+<p>There are $2$ cities $A$ &amp; $B$. There are $2$ roads, $1$ train and $1$ flight connecting them. In how many ways, we can reach city $B$ from $A$?</p>
+</blockquote>
+
+<p><strong>NOTE</strong></p>
+
+<ul>
+<li>Addition means <strong>OR</strong> (option)</li>
+<li>Number of ways should be <em><strong>mutually exclusive</strong></em> or <em><strong>non-overlapping</strong></em>.</li>
+</ul>
+
+<h3 id="multiplication-rule">Multiplication Rule</h3>
+
+<p>If an event $E_1$ can be occured in $m$ ways and another event $E_2$ can be occured in $n$ ways then $E_1$ and $E_2$ can be occured in $m*n$ ways.</p>
+
+<blockquote>
+<p>There are 3 cities A,B &amp; C. There are 2 roads, 1 train and 1 flight connecting A &amp; B and there are 2 roads and 2 trains connecting B &amp; C. In how many ways we can reach from A to C via B.</p>
+</blockquote>
+
+<p><strong>NOTE</strong></p>
+
+<ul>
+<li>Multiplication means <strong>AND</strong> (condition)</li>
+<li>Events must be independent.
+
+<ul>
+<li>Events $E_1$ &amp; $E_2$ are said to be independent when number of ways of occurrence of $E_1$ doesn&rsquo;t depend or change w.r.t number of ways of occurrence of $E_2$ event.
+
+<ul>
+<li>For example: Find number of ways to reach from City A to City C via City B without using <strong><em>SAME</em></strong> mode of transport.</li>
+</ul></li>
+</ul></li>
+<li>If between 2 processes, order is possible, then it will be considered by itself in multiplication.
+
+<ul>
+<li>Suppose we have 4 balls $B_1$, $B_2$, $B_3$, $B_4$ in a bag. In how many ways $2$ balls can be drawn? Hint: Think aloud in terms of Mutiplication Rule.</li>
+<li>Suppose we have two bags $Bag_1$ and $Bag_2$ each having $4$ &amp; $3$ balls respectively. In how many ways we can draw $1$ ball from each bag?
+<br /></li>
+</ul></li>
+</ul>
+
+<h3 id="bijection-rule">Bijection Rule</h3>
+
+<p>Number of favourable ways of occurrence of an event $E$ can be written in terms of total possible ways of occurrence of $E$ and unfavourable ways of occurrence of event of $E$ as:
+$n(E)$ = $n(T)$ - $n(E^{&lsquo;})$</p>
+
+<ul>
+<li>This rule is helpful, when its practically very complicated to calculate all possible favourable ways of occurrence of $E$ rather than unfavourable ways.</li>
+</ul>
+
+<h3 id="practice-problems">Practice Problems</h3>
+
+<h4 id="warmup-problems">Warmup Problems</h4>
+
+<ol>
+<li>If a coin is tossed $n$ times, then find possible number of outcome sequences.</li>
+<li>Find total number of ways in which $3$ objects out of $10$ different objects can be placed in a row on a shelf.</li>
+<li>Let $10$ different colour flags are given and a signal using 3 is to be made. Find total number of possible signals.</li>
+<li>Find total number of $5$ letter words using the letters of a word $TOUGH$, when
+
+<ul>
+<li>Repitition of letters / alphabets are allowed.</li>
+<li>Repitition is <strong>NOT</strong> allowed.</li>
+</ul></li>
+<li>Let an objectve paper have $10$ questions with $4$ choices. Find possible number of answer sequences, if
+
+<ul>
+<li>Exactly $1$ option is correct</li>
+<li>More than $1$ option is correct or in other words, $at least$ <strong>1</strong> option is correct.</li>
+</ul></li>
+</ol>
+
+<h4 id="mega-problem">Mega Problem</h4>
+
+<p>Let a $7$ digit number is to be made. Find total possible numbers if,</p>
+
+<ol>
+<li>All digits are <strong>different</strong>.</li>
+<li><strong>Repetition</strong> of digits is allowed.</li>
+<li>No $two$ consecutive digits are <strong>same</strong>.</li>
+<li>All digits are $different$ and number formed is <strong>ODD</strong>.</li>
+<li>All digits are $distinct$ and number formed is <strong>EVEN</strong>.</li>
+<li>Number formed should <strong><em>NOT</em></strong> contain $4$ and
+
+<ul>
+<li>Repetition of digits are allowed</li>
+<li>Repetition of digits are <strong>NOT</strong> allowed.</li>
+</ul></li>
+<li>Number formed <strong><em>should</em></strong> contain $5$ and
+
+<ul>
+<li>Repetition of digits are allowed</li>
+<li>Repetition of digits are <strong>NOT</strong> allowed.</li>
+</ul></li>
+<li>Number formed should be <strong>divisible</strong> by $4$ and
+
+<ul>
+<li>Repetition of digits are allowed</li>
+<li>Repetition of digits are <strong>NOT</strong> allowed.</li>
+</ul></li>
+<li>Number formed should be <strong>divisible</strong> by $3$, $0$ is <strong>not</strong> used and
+
+<ul>
+<li>Repetition of digits are allowed</li>
+<li>Repetition of digits are <strong>NOT</strong> allowed.
+<br /></li>
+</ul></li>
+</ol>
+
+<h2 id="elementary-permutation-and-combination">Elementary Permutation and Combination</h2>
+
+<h3 id="permutation">Permutation</h3>
+
+<p>It means $Arrangement$.
+&gt; Illustration: In how many ways $ABC$ can arrange in a line?
+  It means, we have $3$ places and we need to place $A$, $B$ &amp; $C$ in those $3$ places.</p>
+
+<h3 id="combination">Combination</h3>
+
+<p>It means $Selection$.
+&gt; Illustration: We have $4$ objects. We need to choose $3$ objects. In how many ways we can do this?
+  It means, we just need to focus on selecting the objects, not order in which they can be pick / selected.</p>
+
+<ul>
+<li>If there are $n$ different objects and they need to be arrange in a line / row, in how many ways we can do this?
+
+<ul>
+<li>Solution: $n!$ <em>hint</em>: Think in terms of Multiplication rule.</li>
+</ul></li>
+</ul>
+
+<h4 id="pratice-problems">Pratice Problems</h4>
+
+<ol>
+<li>Find number of possible batting order in a team of $11$ players.</li>
+<li>How many <strong>more</strong> words can be formed using all letters of the word $TRIANGLE$?</li>
+</ol>
+
+<h3 id="permutation-combination-mix-problem-types">Permutation &amp; Combination Mix Problem Types</h3>
+
+<blockquote>
+<p>There are $n$ objects and we need to choose $r$ objects. In how many ways this selection can be done?
+$$C(n, r) = \frac{n!}{(n-r)!}$$</p>
+</blockquote>
+
+<h4 id="sample-problems">Sample Problems</h4>
+
+<ol>
+<li>In how many ways $3$ letter words can be formed from a word $TRIANGLE$?</li>
+<li>In how many ways we can select team of $11$ players from $20$ players?</li>
+<li>How many <em>triangles</em> can be formed using vertices of $hexagon$?</li>
+<li>Find total number of 5 digits number in which digits are in
+
+<ul>
+<li>Ascending Order</li>
+<li>Decending Order</li>
+</ul></li>
+</ol>
+
+<blockquote>
+<p>There are $n$ <strong>different</strong> objects and $r$ to be selected and then we need to arrange them, or in other words, we need to arrange $r$ objects out of $n$ <strong>different</strong> objects. In how many ways we can do this?
+$$C(n,r).r! = \frac{n!}{(n-r)!}r! $$
+$C(n,r)$ = Choose r objects and $r!$ = Arrange them</p>
+</blockquote>
+
+<h4 id="sample-problem">Sample Problem</h4>
+
+<ol>
+<li>Out of $5$ different objects, $3$ needs to be arrange in an row. In how many we can arrange them?</li>
+<li>Find number of $4$ letter words formed using $a,e,i,o,p,q,r,s,t$ and
+
+<ul>
+<li>A letter can be used at most once</li>
+<li>using exactly $2$ vowels</li>
+<li>using atmost $1$ vowel</li>
+</ul></li>
+</ol>
+
+<blockquote>
+<p>Let there are $n$ objects and its given that $n_1$ objects are of $type_1$, $n_2$ objects are of $type_2$ &hellip;. $n_k$ objects are of $type_k$ and rest all are of different types. What are the possible number of permutations?
+$$\frac {n!}{n_1!n_2!&hellip;.n_k!}$$</p>
+</blockquote>
+
+<h4 id="sample-problem-1">Sample Problem</h4>
+
+<ol>
+<li>Find number of ways of arranging $5$ $a$&rsquo;s, $4$ $b$&rsquo;s, $3$ $c$&rsquo;s, $2$ $d$&rsquo;s, $e,f,g,h,i,j$.</li>
+<li>Find how many ways we can rearrange letters of the word $MATHEMATICS$.</li>
+</ol>
+
+<h3 id="tie-gap-method">Tie &amp; Gap Method</h3>
+
+<blockquote>
+<p>TODO</p>
+</blockquote>
+
+<h3 id="all-possible-selections">All Possible Selections</h3>
+
+<ul>
+<li><p>Number of ways of selecting $r$ objects out of $n$ <strong>different</strong> objects = $C(n, r)$</p></li>
+
+<li><p>Number of ways of selecting $r$ objects out of $n$ <strong>identical</strong> objects = $1$</p></li>
+
+<li><p>Number of ways of selecting <strong>at least</strong> $r$ objects out of $n$ <strong>different</strong> objects
+&gt; $C(n, r) + C(n, r+1) + &hellip;.. + C(n, n)$</p>
+
+<ul>
+<li>Solution Approach:
+
+<ol>
+<li>Convert <strong>at least</strong> to <strong>exactly</strong></li>
+<li>at least $r$, can we written as exactly $r, r+1, r+2, &hellip;., n$
+<br />
+<br /></li>
+</ol></li>
+</ul></li>
+
+<li><p>Number of ways of selecting <strong>at least</strong> $r$ objects out of $n$ <strong>identical</strong> objects
+&gt; $C(n, r) + C(n, r+1) + &hellip;.. + C(n, n) = 1 + 1 + 1 + &hellip;. + 1 = (n - r + 1) $</p></li>
+
+<li><p>Total number of selections out of $n$ different objects while selecting at least $1$.
+&gt; $C(n,1) + C(n,2) + &hellip;.. + C(n, n) = 2^n - 1$</p>
+
+<ul>
+<li>Another thought process
+
+<ul>
+<li>Selection / Rejection of each object.</li>
+<li>$2$ possible ways for all $n$ objects except when all are rejected = $2^n - 1$</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h4 id="illustration-problem">Illustration Problem</h4>
+
+<blockquote>
+<p>Let $4$ bags $B_1, B_2, B_3, B_4$ are given with following constraints:
+* $B_1$: Contains $n_1$ <strong>identical</strong> objects of type $1$
+* $B_2$: Contains $n_2$ <strong>identical</strong> objects of type $2$
+* $B_3$: Contains $n_3$ <strong>different</strong> objects
+* $B_4$: Contains $n_4$ <strong>different</strong> objects
+* $n_1 &lt; n_2 &lt; n_3 &lt; n_4$</p>
+
+<p>Find total number of possible selection:
+   1. <strong>at least</strong> one selection
+   2. <strong>at least</strong> one from each bag
+   3. when no object from $Bag_3$ is selected and there is <strong>at least</strong> one selection over all
+   4. when selecting <strong>at least</strong> one from $B_3$
+   5. when selecting equal number of objects from $B_1, B_2$
+   6. when selecting $1$ object <strong>more</strong> froom $B_2$ than $B_1$
+   7. when selecting equal number of objects from $B_3, B_4$</p>
+</blockquote>
+
+<h3 id="grouping-division-distribution">Grouping (Division &amp; Distribution)</h3>
+
+<h4 id="division">Division</h4>
+
+<ul>
+<li><p>Number of ways of <strong>dividing</strong> $n$ <strong>different</strong> objects into $r$ groups of group sizes, $n_1, n_2, n_3, &hellip;&hellip;, n_r$ where <em>no two groups</em> have <strong>same</strong> size, i.e. $n_i \ne n_j \forall i,j \in [1, r]$
+$$\frac {n!} {n_1!n_2!&hellip;.n_r!}$$</p>
+
+<ul>
+<li>Solution Approach:
+$$C(n, n_1).C(n-n_1, n_2).C(n-(n_1 + n_2), n_3)&hellip;.. C(n_r, n_r)$$</li>
+<li>Illustration:  Let there are $10$ different objects and they need to be divided into groups of sizes $3,2,5$. In how many ways we can distribute them?
+
+<ul>
+<li>Approach 1: $C(10, 5).C(5, 3).C(3,3) = \frac {10!}{5!5!} . \frac {5!}{3!2!} . 1$</li>
+<li>Approach 2: All permutation = $10!$
+
+<ul>
+<li>$O_1O_2O_3O_4O_5|O_6O_7O_8|O<em>9O</em>{10}$</li>
+<li>Think in terms of eliminating ordering of objects within the groups i.e. from all permutation we are reaching towards unique combination of objects within the groups.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+
+<li><p>Number of ways of <strong>dividing</strong> $n$ <strong>different</strong> objects into $r$ groups in which $k_1$ groups are of size $n_1$, $k_2$ groups are of size $n_2$ &hellip;.. $k_r$ groups are of size $n_r$
+$$\frac {n!}{(n_1!)^{k_1}(n_2!)^{k_2}&hellip;(n_r!)^{k_r} . {k_1!k_2!&hellip;k_r!}}$$</p>
+
+<ul>
+<li>Solution Approach
+
+<ul>
+<li>Lets take 5 objects $O_1, O_2, O_3, O_4, O_5$ and divide them in $3$ groups of size $1,2,2$.</li>
+<li>Lets apply above method to divide $n$ objects in $r$ groups of different sizes
+
+<ul>
+<li>$[O_1], [O_2,O_3], [O_4, O_5]$</li>
+<li>$[O_1], [O_4,O_5], [O_2, O_3]$</li>
+<li>$[O_1], [O_2,O_4], [O_3, O_5]$</li>
+<li>$[O_1], [O_3,O_5], [O_2, O_4]$</li>
+<li>$[O_1], [O_2,O_5], [O_3, O_4]$</li>
+<li>$[O_1], [O_3,O_4], [O_2, O_5]$</li>
+</ul></li>
+<li>As you can see, above division of objects is repeated for groups of sizes $2$.</li>
+<li>If we extend this all possible ways, we find that
+
+<ul>
+<li>$\frac {5!} {2!2!1!} . \frac {1} {2!}$</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h4 id="distribution">Distribution</h4>
+
+<ul>
+<li>Let $n$ <strong>different</strong> objects are to be distributed among $n$ people (one object to each) then number of ways:
+$$n!$$
+
+<ul>
+<li>$P_1, P_2, &hellip;, P_n$ persons are stand in line</li>
+<li>Start placing objects $O_1, O_2, &hellip;., O_n$ in every possible permutation in front on each Person.</li>
+</ul></li>
+<li>Let $n$ <strong>different</strong> objects are to be distributed among $r$ people with <strong>No</strong> restriction on distribution of objects but all objects should be distributed
+$$r^n$$
+
+<ul>
+<li>Consider objects $O_1, O_2,&hellip;. O_n$ to be distributed among $P_1, P_2, &hellip;, P_r$ persons, such that any person can get any number objects.</li>
+<li>$r.r.r&hellip;..r$ ($n$ times)</li>
+</ul></li>
+<li>Number of ways of distributing all $n$ <strong>different</strong> objects among $r$ people ($r &gt; n$), such that <strong>no</strong> one gets more than $1$ object
+$$C(r, n). n! = \frac {r!}{(r-n)!} = r.(r-1).(r-2)&hellip;&hellip;(r-(n-1))$$
+
+<ul>
+<li>Approach <strong>1</strong>: First choose $n$ people out of $r$ people and apply distribution logic of distributing $k$ different objects to $k$ poeple.</li>
+<li>Approach <strong>2</strong>: $O_1$ can be assigned to $r$ people, $O_2$ can be assigned to $r-1$, and so on&hellip;
+
+<ul>
+<li>$r.(r-1).(r-2)&hellip;.(r-(n-1))$</li>
+</ul></li>
+</ul></li>
+<li>Let $n$ <strong>different</strong> objects are to be distributed among $r$ people with <strong>No</strong> restriction on distribution of objects to a person and <strong>No</strong> restriction on number of distributed objects but <strong>atleast one</strong> object needs to be distributed. Find all possible number of ways.
+$$(1+r)^n - 1$$
+
+<ul>
+<li>Solution Approach:<strong>1</strong>
+
+<ul>
+<li>Convert <strong>atleast one</strong> to <strong>exactly</strong></li>
+<li>exactly $1 OR$ exactly $2 OR$ &hellip;. exactly $n$ objects to be distributed among $r$ people without any restriction</li>
+<li>${n \choose 1}.r + {n \choose 2}.r^2 + &hellip;.. + {n \choose n}.r^n = (1 + r)^n - 1 $ &hellip; by binomial theorem</li>
+</ul></li>
+<li>Solution Approach:<strong>2</strong>
+
+<ul>
+<li>Consider $1,2,3&hellip;.r,Box$ $r + 1$ people and we need to distribute $n$ objects without restriction on number of objects given to a person.</li>
+<li>$(1+r)^n - 1$<br /></li>
+<li>$-1$ because there would be a case when no object has been distributed to any person and all goes into box.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h4 id="illustration-problems">Illustration Problems</h4>
+
+<ol>
+<li>Let there are $9$ different objects and $3$ persons $A,B,C$. Find number of ways of distribution of all objects if
+
+<ol>
+<li><strong>No</strong> restriction</li>
+<li>$A$ has $4$, $B$ has $3$ and $C$ has $2$ objects</li>
+<li>Each one gets <strong>at least</strong> $1$</li>
+<li>$A$ and $B$ gets equal numbet of objects and each one <strong>atleast</strong> $1$</li>
+<li>$A$ gets more number objects than $B$, $B$ gets more than $C$</li>
+<li>Number of objects given to $A$ greater than $B$ or $C$</li>
+<li><strong>without</strong> any restriction when all objects need <strong>not</strong> to be distributed but <strong><em>atleast</em></strong> 1.</li>
+<li><strong><em>Exactly</em></strong> $1$ object to each</li>
+</ol></li>
+</ol>
+
+    </article>
+
+    
+
+    <ul class="pager article-pager">
+      <li class="pager-newer pager-noitem">&lt; Newer</li>
+      <li class="pager-older pager-noitem">Older &gt;</li>
+    </ul>
+  </div>
+
+
+<div class="site-footer">
+  <div class="copyright">&copy; Copyright 2018 MT</div>
+  <ul class="site-footer-items">
+    <li class="site-footer-item-about"><a href="/about/" title="About">About</a></li>
+  </ul>
+  <div class="powerdby">
+    Powered by <a href="https://gohugo.io/">Hugo</a> and <a href="https://github.com/taikii/whiteplain">Whiteplain</a>
+  </div>
+</div>
+<script src="/js/script.js"></script>
+<script src="/js/custom.js"></script>
+
+
+</body>
+</html>

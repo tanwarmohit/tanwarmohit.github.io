@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Blog</title>
+    <link>https://example.com/post/</link>
+    <description>Recent content in Posts on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Copyright 2018 MT</copyright>
+    <lastBuildDate>Fri, 22 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Basic Counting</title>
+      <link>https://example.com/post/basic-counting/</link>
+      <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/post/basic-counting/</guid>
+      <description>Basic Counting methods using Permutation and Combination techniques. These are my classroom notes, which might be helpful to others. It starts from basic fundamental principle of counting and then move to elementary Permutation, Combination and their applications. Each section includes some basic problems for practice and illustrative examples for more complex topics. Some problems contains many sub-problems which helps in getting better insights for the concept / theory explained.</description>
+    </item>
+    
+  </channel>
+</rss>
