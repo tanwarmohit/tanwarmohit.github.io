@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright 2018 MT</copyright>
-    <lastBuildDate>Fri, 22 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Arrays</title>
+      <link>https://example.com/post/arrays/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/post/arrays/</guid>
+      <description>In this blog, various operations on arrays have been explained with examples. Properties like rotation of arrays, searching elements in sorted and rotated arrays, shuffling operations, order statistics like finding kth elements under various constraints and queries on range of indices also have been explained with examples along with problem links from platforms like leetcode, wherever possible. Some basic optimization problems along with searching and sorting also been pen down and reference problems have been shared.</description>
+    </item>
     
     <item>
       <title>Basic Counting</title>
